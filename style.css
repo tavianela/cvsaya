@@ -1,0 +1,586 @@
+html, body {
+    height: 100%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Abu-abu muda untuk latar belakang */
+    color: #333333; /* Teks gelap agar mudah dibaca */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+header {
+    background: #7FB3D5; /* Biru muda */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Added for absolute positioning of #header-profile-link */
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+nav {
+    background: #e9ecef; /* Abu-abu sangat muda */
+    padding: 10px 0;
+    text-align: center;
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Pusatkan item secara horizontal */
+    align-items: center; /* Pusatkan item secara vertikal */
+}
+
+nav a {
+    color: #000000; /* Black font color */
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em; /* Slightly larger font size */
+    font-weight: bold; /* Make it bold for emphasis */
+}
+
+nav a.active, nav a:hover {
+    background: #7FB3D5; /* Biru muda */
+    color: #ffffff;
+}
+
+.content {
+    padding: 20px;
+    background: #ffffff; /* Putih */
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.content h2 {
+    color: #2980b9; /* Biru yang sedikit lebih gelap */
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li {
+    background: #f8f9fa; /* Abu-abu sangat muda */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#kontak a {
+    color: #2980b9;
+}
+
+/* Recipe Card Styles */
+.recipe-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.recipe-card h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.recipe-image {
+    width: 200px; /* Even further reduced fixed width */
+    height: 200px; /* Made square */
+    object-fit: cover; /* Ensure images fill the space without distortion */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recipe-image-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between image and button */
+    margin-bottom: 15px; /* Space below the container */
+}
+.read-more-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.read-more-btn:hover {
+    background-color: #0056b3;
+}
+.recipe-details {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+.recipe-details.hidden {
+    display: none;
+}
+.recipe-details p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.recipe-details strong {
+    color: #555;
+}
+
+/* Comment Form Styles */
+.comment-form {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid #eeeeee;
+}
+.comment-form h3 {
+    color: #2980b9;
+    margin-top: 0;
+}
+.comment-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+/* User Initial Logo */
+.user-initial-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2980b9; /* Biru */
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Comment Item */
+.comment-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+.comment-item strong {
+    margin-right: 5px;
+}
+.comment-item .user-initial-logo {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+/* Comment Actions */
+.comment-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
+
+/* Small Button */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: #7FB3D5;
+    color: white;
+}
+.btn-small:hover {
+    background-color: #5D99C4;
+}
+
+/* Admin Reply Form */
+.admin-reply-form {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    display: none; /* Hidden by default */
+}
+.admin-reply-form textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    resize: vertical;
+}
+.admin-reply-form .btn-small {
+    width: auto;
+}
+
+/* Temporary Replies Section */
+.temporary-replies-section {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #eee;
+}
+
+/* Reply Item */
+.reply-item {
+    background-color: #f0f2f5;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+/* Reply Notification */
+.reply-notification {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 3px;
+    display: none;
+}
+
+/* Existing Comments */
+.existing-comments {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+.existing-comments h3 {
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    .content {
+        padding: 15px;
+    }
+    .login-box {
+        padding: 20px;
+    }
+    .logout-icon {
+        font-size: 20px;
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+}
+
+/* New CSS for #header-profile-link */
+#header-profile-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* Adjust positioning relative to the header and profile image */
+    /* You might need to adjust 'top' and 'left' values based on exact layout */
+}
+
+#header-profile-link a {
+    color: #ffffff; /* White text for contrast against blue header */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#header-profile-link a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top (higher than header-profile-link) */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Admin Page Styles */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.admin-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.admin-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.admin-card h2 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.admin-card .input-group {
+    margin-bottom: 20px;
+}
+
+.admin-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.admin-card input[type="text"],
+.admin-card textarea,
+.admin-card input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.admin-card input[type="text"]:focus,
+.admin-card textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.admin-card .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.admin-card .btn:hover {
+    background-color: #2980b9;
+}
+
+.skill-list-admin,
+.article-list-admin {
+    margin-top: 20px;
+}
+
+.skill-item-admin,
+.article-item-admin {
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.skill-item-admin:hover,
+.article-item-admin:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.skill-item-admin .btn,
+.article-item-admin .btn {
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: #95a5a6;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.skill-item-admin .btn:hover,
+.article-item-admin .btn:hover {
+    background-color: #7f8c8d;
+}
+
+.skill-item-admin .btn-danger,
+.article-item-admin .btn-danger {
+    background-color: #e74c3c;
+}
+
+.skill-item-admin .btn-danger:hover,
+.article-item-admin .btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Login Page Styles */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-header .bi-person-circle {
+    color: #7FB3D5;
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-box .input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.login-box .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.login-box .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.login-box .input-group input:focus {
+    outline: none;
+    border-color: #7FB3D5;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: #7FB3D5;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background: #5D99C4;
+}
+
+.login-box .register-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.login-box .register-link a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.login-box .register-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e74c3c;
+    background-color: #fdd;
+    border: 1px solid #e74c3c;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}

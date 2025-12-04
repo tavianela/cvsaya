@@ -1,0 +1,25 @@
+buatkan cv website tentang kepridan diri yang berisi foto pribadi tentang profil , Riwayat  Pendidikan , pengalaman , kontak , hobi dan cita cita . serta ada halaman untuk artikel nya . dan untuk warna nya bernuansa biru dan hitam . berikan saya link nya kalau sudah jadi . dengan ketentuan :
+1.halaman Utama berisi login 
+2.kemudian ada halaman yang menampilkan foto dan dibawah foto terdapat nama NELA OKTAVIA
+3.kemudian ada bagian informasi pribadi seperti :
+Tempat tanggal lahir : Banjarnegara 7 oktober 2008
+Riwayat Pendidikan :  -TK PGRI 1 kalipelus
+                      -SD N 1 Kalipelus
+                      -SMP N 1 Purwanegara
+                      -SMK N 1 Bawang 
+Pengalaman : TK : Mengikuti lomba menyayi
+             SD : Mengikuti Kemah 
+             SMP: Menjadi Penggalang Garuda dan mengikuti tari dawet ayu di kabupaten banjarnegara
+             SMK: Mengikuti OSIS 
+
+Hobi : Menari , Berolahraga , Bernyanyi , Memasak .
+Cita Cita : Guru B indonesia
+
+Kontak
+Email : oktavianela84@email.com
+
+Telepon : +62 882-0059-68007
+
+Instagram : @nltaviaa
+
+Tiktok :@nlataviaa
